@@ -16,13 +16,15 @@ const resolvers = {
 		quotes: (root, args, ctx, info) => ctx.prisma.query.quotes({}, info),
 	},
 	Mutation: {
-		createQuote: (root, args, ctx, info) =>
-			ctx.prisma.mutation.createQuote({
+		createQuote: (root, args, ctx, info) => {
+			console.debug(`mutation`, args)
+			return ctx.prisma.mutation.createQuote({
 				data: {
-					text: args.text,
-					from: args.from
+					text: args.data.text,
+					from: args.data.from
 				}
-			}, info),
+			}, info)
+		}
 	},
 }
 

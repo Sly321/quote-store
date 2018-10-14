@@ -27,6 +27,51 @@ prisma generate
 yarn start
 ```
 
+## Using
+
+### get all quotes
+
+playground
+
+```graphql
+{
+  quotes {
+    text
+  }
+}
+
+```
+
+curl
+
+```sh
+curl 'http://localhost:4000/' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: http://localhost:4000' --data-binary '{"query":"{\n  quotes {\n    text\n  }\n}\n"}' --compressed
+```
+
+### add quote
+
+playground
+
+```graphql
+mutation {
+  createQuote(data: {
+    text: "That's what i do, i drink and know things.",
+    from: "Tyrion Lannister",
+  }) {
+    id
+  }
+}
+
+```
+
+curl
+
+```sh
+curl 'http://localhost:4000/' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: http://localhost:4000' --data-binary '{"query":"mutation {\n  createQuote(data: {\n    text: \"That's what i do, i drink and know things.\",\n    from: \"Tyrion Lannister\",\n  }) {\n    id\n  }\n}\n"}' --compressed
+```
+
 ## TODO
 
-- [ ] Pack client into a Docker Image
+- [ ] pack client into a Docker Image
+- [ ] create client typedefs
+- [ ] add javascript examples for requests [like here](https://graphql.org/graphql-js/mutations-and-input-types/)
