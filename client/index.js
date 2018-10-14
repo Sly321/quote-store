@@ -1,8 +1,4 @@
 const {
-	prisma
-} = require('../database/generated/prisma-client')
-
-const {
 	typeDefs
 } = require('../database/generated/prisma-client/prisma-schema')
 
@@ -13,22 +9,6 @@ const {
 const {
 	Prisma
 } = require('prisma-binding')
-
-// A `main` function so that we can use async/await
-async function main() {
-
-	// Create a new user called `Alice`
-	const newQuote = await prisma.createQuote({
-		text: "That's what I do, I drink and I know things.",
-		from: "Tyrion Lannister"
-	})
-
-	// Read all users from the database and print them to the console
-	const allQuotes = await prisma.quotes()
-	console.log(allQuotes)
-}
-
-// main().catch(e => console.error(e))
 
 
 const resolvers = {
@@ -59,4 +39,4 @@ const server = new GraphQLServer({
 	}),
 })
 
-server.start(() => console.log('Server is running on localhost:4000'))
+server.start(() => console.log('QuoteStore is running on localhost:4000'))
