@@ -1,6 +1,7 @@
 const {
 	prisma
 } = require('../database/generated/prisma-client')
+
 const {
 	typeDefs
 } = require('../database/generated/prisma-client/prisma-schema')
@@ -8,6 +9,7 @@ const {
 const {
 	GraphQLServer
 } = require("graphql-yoga")
+
 const {
 	Prisma
 } = require('prisma-binding')
@@ -56,4 +58,5 @@ const server = new GraphQLServer({
 		}),
 	}),
 })
+
 server.start(() => console.log('Server is running on localhost:4000'))
