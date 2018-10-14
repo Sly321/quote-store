@@ -1,0 +1,13 @@
+{
+  "name": "quote-store",
+  "version": "1.0.0",
+  "description": "Quote Store is a REST API that allows users to store movie and series quotes into a database and read them. Written in Nodejs with GraphQL, Express, Prisma &amp; Postgres. Running on Docker.",
+  "main": "index.js",
+  "repository": "git@github.com:Sly321/quote-store.git",
+  "author": "Sven Liebig <liebigsv@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graphql": "0.13",
+    "prisma-client-lib": "^1.18.0"
+  }
+}
