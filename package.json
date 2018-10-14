@@ -9,6 +9,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "graphql": "0.13",
+    "graphql-yoga": "^1.16.2",
+    "prisma-binding": "^2.1.6",
     "prisma-client-lib": "^1.18.0"
   },
   "scripts": {
